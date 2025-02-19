@@ -1,21 +1,23 @@
-server:
-  port: 8080  # API Gateway chạy trên cổng 8080
-
-app:
-  api-prefix: /api/v1
-
 spring:
   application:
-    name: api-gateway
-  cloud:
-    gateway:
-      routes:
-        - id: authentication-service
-          uri: http://localhost:8081
-          predicates:
-            - Path=${app.api-prefix}/authentication/**
-          filters:
-            - StripPrefix=2
+    name: authentication-service
+  datasource:
+    url: jdbc:postgresql://localhost:5432/authentication-service
+    username: postgres
+    password: 12345678
+    driver-class-name: org.postgresql.Driver
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.PostgreSQLDialect
+
+server:
+  port: 8080
+  servlet:
+    context-path: /authentication
 
 eureka:
   client:
@@ -23,3 +25,5 @@ eureka:
     fetch-registry: true
     service-url:
       defaultZone: http://localhost:8761/eureka
+  instance:
+    prefer-ip-address: true
