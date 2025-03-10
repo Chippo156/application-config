@@ -48,9 +48,11 @@ management:
 springdoc:
   swagger-ui:
     path: /swagger-ui.html
-  api-docs:
-    enabled: true
-    groups:
-      enabled: true
-    paths-to-match: /**
-  show-actuator: true
+    urls:
+      - name: book-service
+        url: /book-service/v3/api-docs
+      - name: order-service
+        url: /order-service/v3/api-docs
+      - name: user-service
+        url: /user-service/v3/api-docs
+
