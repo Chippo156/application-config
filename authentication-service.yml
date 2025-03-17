@@ -25,21 +25,21 @@ spring:
           google:
             client-id: 416215036097-h4scpfo2ev637cfpbhg5rk0bnrncpsin.apps.googleusercontent.com
             client-secret: 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
-            redirect-uri: http://localhost:5173/oauth2/callback/google
+            redirect-uri: http://localhost:3000/oauth2/callback/google
             scope:
               - profile
               - email
           github:
-            client-id: Ov23lidtJoR1rFJQqL13
-            client-secret: b074afd74f998e6552d8a87f13cf4a4dcaaf876e
-            redirect-uri: http://localhost:5173/oauth2/callback/github
+            client-id: Ov23lisQQDkPsSaA8tnv
+            client-secret: 8737f41e6cc548f22da69226ef7a73a9d3aac422
+            redirect-uri: http://localhost:3000/oauth2/callback/github
             scope:
               - user:email
               - read:user
           facebook:
             client-id: 1320082529110973
             client-secret: be36ade40fcf42487d35bb07e553fbbd
-            redirect-uri: http://localhost:5173/oauth2/callback/facebook
+            redirect-uri: http://localhost:3000/oauth2/callback/facebook
 management:
   zipkin:
     tracing:
